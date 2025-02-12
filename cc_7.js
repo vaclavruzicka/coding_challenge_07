@@ -19,3 +19,26 @@ function calculateHourlyWage(salary, hoursPerWeek){ //Writing a function that ca
 //Using .tofixed(2) in order to round and display two decemial points for the hourly wage.
 console.log(`Hourly Wage: $${calculateHourlyWage(52000,40).toFixed(2)}`) //Expected Output: "Hourly Wage: $25.00"
 console.log(`Hourly Wage: $${calculateHourlyWage(75000,35).toFixed(2)}`) //Expected Output: "Hourly Wage: $41.21"
+
+//Task 3 - Customer Loyalty Discount
+
+const calculateLoyaltyDiscount = (amount, years) => { //Writing a function that calcuates a total after a discount given the amount of the purchase and how many years the person has been a loyalty memeber.
+    if (years >= 5) {
+        discount = 0.15 //Using an if statement to make the discount 15% if they have been a member for 5 or more years.
+    }
+    if (years === 3) {
+        discount = 0.10 //Using an if statement to make the discount 10% if they have been a member for 3 years.
+    }
+    if (years === 4) {
+        dicsount = .10 //Using an if statement to make the discount 10% if they have been a member for 4 years.
+    }
+    if (years <3) {
+        discount = 0.05 //Using an if statement to make the discount 5% if they have been  a member for 2 years or less.
+    }
+    return amount - (amount * discount) //Applying the discount to the total.
+}
+
+//Logging the function with test data using a template literal.
+//Used .tofixed(2) to round the totals to 2 decimal points.
+console.log(`Discounted Price: $${calculateLoyaltyDiscount(100, 6).toFixed(2)}`) //Expected Output: "Discounted Price: $85.00"
+console.log(`Discounted Price: $${calculateLoyaltyDiscount(200, 2).toFixed(2)}`) //Expected Output: "Discounted Price: $190.00"
