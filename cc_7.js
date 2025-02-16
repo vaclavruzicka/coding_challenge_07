@@ -88,3 +88,20 @@ function filterHighValueTransactions(transactions , amount){
 
 //Logging the array with the filter function.
 console.log(filterHighValueTransactions(transactions, 1000))
+
+//Task 7 - Clsoures
+
+//Writing a function that creates a tracker that follow how much has been spent.
+function createBudgetTracker(){
+    let currentBalance = 0 //Starts the running total at 0.
+
+    return function(expense){
+        currentBalance += expense //Adds the amount input to the running total.
+        return `Current Balance: -$${currentBalance}` //Returns the running a total using a template literal and puts a negative symbol in fron to show that they are expenses.
+    } 
+}
+
+let budget = createBudgetTracker() //Allowing the function to just be called 'tracker' to allow for ease of use.
+
+console.log(budget(300)) //Expected OutPut: "Current Balance: -$300"
+console.log(budget(200)) //Expected OutPut: "Current Balance: -$500"
