@@ -25,16 +25,16 @@ console.log(`Hourly Wage: $${calculateHourlyWage(75000,35).toFixed(2)}`) //Expec
 const calculateLoyaltyDiscount = (amount, years) => { //Writing a function that calcuates a total after a discount given the amount of the purchase and how many years the person has been a loyalty memeber.
     if (years >= 5) {
         discount = 0.15 //Using an if statement to make the discount 15% if they have been a member for 5 or more years.
+                        //If the years are not greater then or equal to five, the function then moes onto the next if else statement in order to determine the discount.
+    } else {
+        
+        if (years <3) {
+            discount = 0.05 //Using an if statement to make the discount 5% if they have been  a member for 2 years or less.
+        } else {
+            discount = 0.10 //Using an the else part of the if else statement to make the discount 10% because if the year is not below 3, equal to 5, or above 5, it must be 3 or 4
+        }
     }
-    if (years === 3) {
-        discount = 0.10 //Using an if statement to make the discount 10% if they have been a member for 3 years.
-    }
-    if (years === 4) {
-        dicsount = .10 //Using an if statement to make the discount 10% if they have been a member for 4 years.
-    }
-    if (years <3) {
-        discount = 0.05 //Using an if statement to make the discount 5% if they have been  a member for 2 years or less.
-    }
+    //Using an if statement to make the discount 5% if they have been  a member for 2 years or less.
     return amount - (amount * discount) //Applying the discount to the total.
 }
 
