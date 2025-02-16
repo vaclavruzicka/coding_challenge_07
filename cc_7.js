@@ -5,7 +5,7 @@ function calculateInvoice(subtotal, taxRate, discount){ //Writing a function tha
 }
 
 //Logging the function with test data using a template literal.
-//Using .tofixed(2) in order to display two decemial points for the invoice total.
+//Using .toFixed(2) in order to display two decemial points for the invoice total.
 console.log(`Total Invoice: $${calculateInvoice(100, 0.08, 5).toFixed(2)}`) //Exepcted Output: "Total Invoice: $103.00"
 console.log(`Total Invoice: $${calculateInvoice(500, 0.1, 20).toFixed(2)}`) //Expected Output: "Total Invoice: $530.00"
 
@@ -16,7 +16,7 @@ function calculateHourlyWage(salary, hoursPerWeek){ //Writing a function that ca
 }
 
 //Logging the function with test data using a template literal.
-//Using .tofixed(2) in order to round and display two decemial points for the hourly wage.
+//Using .toFixed(2) in order to round and display two decemial points for the hourly wage.
 console.log(`Hourly Wage: $${calculateHourlyWage(52000,40).toFixed(2)}`) //Expected Output: "Hourly Wage: $25.00"
 console.log(`Hourly Wage: $${calculateHourlyWage(75000,35).toFixed(2)}`) //Expected Output: "Hourly Wage: $41.21"
 
@@ -39,6 +39,27 @@ const calculateLoyaltyDiscount = (amount, years) => { //Writing a function that 
 }
 
 //Logging the function with test data using a template literal.
-//Used .tofixed(2) to round the totals to 2 decimal points.
+//Used .toFixed(2) to round the totals to 2 decimal points.
 console.log(`Discounted Price: $${calculateLoyaltyDiscount(100, 6).toFixed(2)}`) //Expected Output: "Discounted Price: $85.00"
 console.log(`Discounted Price: $${calculateLoyaltyDiscount(200, 2).toFixed(2)}`) //Expected Output: "Discounted Price: $190.00"
+
+//Task 4 - Parameters and Arguments
+
+//Wrtiting a function that calcualtes a packages shipping cost given a weight, location, and whether it was expedited.
+function calculateShippingCost(weight, location, expedited = false){
+    let cost = 0
+    if (location === "USA") {
+       cost = 5 + (0.5 * weight) //If the location is in the USA, then the base cost is 5 dollars and is 50 cents per lb.
+    } else {
+       cost = 10 + (0.7 * weight)//If the location is in Canada, then the base cost is 7 dollars and is 70 cents per lb.
+    }
+    if (expedited === true) {
+        cost += 10 //Adding a ten dollar surcharge if the package is expedited.
+    }
+    return cost
+}
+
+//Logging the function with provided data using a template literal.
+//Using .toFixed(2) to round the totals to 2 decimal points.
+console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true).toFixed(2)}`)
+console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false).toFixed(2)}`)
