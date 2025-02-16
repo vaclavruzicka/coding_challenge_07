@@ -61,5 +61,18 @@ function calculateShippingCost(weight, location, expedited = false){
 
 //Logging the function with provided data using a template literal.
 //Using .toFixed(2) to round the totals to 2 decimal points.
-console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true).toFixed(2)}`)
-console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false).toFixed(2)}`)
+console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true).toFixed(2)}`) //Expected Output: "Shipping Cost: $20.00"
+console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false).toFixed(2)}`) //Expected Output: "Shipping Cost: $13.50"
+
+//Task 5 - Returning Values
+
+//Writing a function that caluclates the intrest on a loan given the principle amount, intrest rate,and the how many years for the loan.
+function calculateLoanIntrest(principal, rate, years){
+    intrest = principal * rate * years
+    return intrest
+}
+
+//Logging the function with provided data using a template literal.
+//Using .toFixed(2) to round the totals to 2 decimal points.
+console.log(`Total Intrest: $${calculateLoanIntrest(1000, 0.05, 3).toFixed(2)}`) //Expected Output: "Total Intrest: $150.00"
+console.log(`Total Intrest: $${calculateLoanIntrest(5000, 0.07, 5).toFixed(2)}`) //Expected Output: "Total Intrest: $1750.00"
