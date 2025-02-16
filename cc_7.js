@@ -76,3 +76,15 @@ function calculateLoanIntrest(principal, rate, years){
 //Using .toFixed(2) to round the totals to 2 decimal points.
 console.log(`Total Intrest: $${calculateLoanIntrest(1000, 0.05, 3).toFixed(2)}`) //Expected Output: "Total Intrest: $150.00"
 console.log(`Total Intrest: $${calculateLoanIntrest(5000, 0.07, 5).toFixed(2)}`) //Expected Output: "Total Intrest: $1750.00"
+
+//Task 6 - Higher Order Functions
+
+let transactions = [500, 1200, 3000, 800, 2200] //Declaring an array named transactions with five values.
+
+//Writing a function that filters out any amounts that are not above 1000.
+function filterHighValueTransactions(transactions , amount){
+    return transactions.filter(amount => amount > 1000) //Sets the minimum amount at 1,001.
+}
+
+//Logging the array with the filter function.
+console.log(filterHighValueTransactions(transactions, 1000))
